@@ -1,20 +1,20 @@
-package com.example.project2;
+package com.example.project3;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import jakarta.persistence.*;
 
-import java.io.FileWriter;
 import java.io.Serializable;
 
+@Entity
+@Table (name = "Vehicle")
 public class Vehicle implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     private int id;
     private String makeModel;
     private int year;
     private double retailPrice;
+
 
     public Vehicle() {}
 
